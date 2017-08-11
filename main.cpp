@@ -1,4 +1,6 @@
 #include <python2.7/Python.h>
+#include <fstream>
+#include "SiteData.h"
 
 using namespace std;
 
