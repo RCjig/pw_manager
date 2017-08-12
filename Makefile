@@ -7,9 +7,9 @@ LIBRARY=-lpython2.7
 all: main
 
 main: SiteData.o
-	${CXX} ${INCLUDES} main.cpp -lpython2.7
+	${CXX} ${INCLUDES} -o main main.cpp -lpython2.7
 
 SiteData.o: SiteData.h
 
 clean:
-	rm -f *.o
+	rm -f main *.o
