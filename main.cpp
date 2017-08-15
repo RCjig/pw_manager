@@ -10,6 +10,7 @@ int main(int argc, char **argv) {
 
 	Py_Initialize();
 
+  // create database if not exists
   if (!ifstream("pw.db")) {
 		FILE * pyFile = fopen("db_create.py", "r");
 		PyRun_SimpleFile(pyFile, "db_create.py");
@@ -17,6 +18,7 @@ int main(int argc, char **argv) {
     cout << "Created database" << endl;
   }
 
+  // open up and connect to database
   sqlite3 * db;
   int error;
   error = sqlite3_open("pw.db", &db);

@@ -7,17 +7,19 @@ using namespace std;
 
 class SiteData {
 
+  private:
+    int password;
+
+    string getPassword();
+
   public:
     string site;
     string user;
 
-    SiteData(string site, string user, long password = -1) : site(site), 
+    SiteData(string site, string user, int password = -1) : site(site), 
       user(user) {};
 
-    string getPassword();
-
-  private:
-    long password;
+    void encodePassword(string txtPassword);
 
 };
 
