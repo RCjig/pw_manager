@@ -19,7 +19,9 @@ class SiteData {
     SiteData(string site, string user, int password = -1) : site(site), 
       user(user) {};
 
-    void encodePassword(string txtPassword);
+    string encodePassword(string txtPassword);
+
+    string encodeChar(int currChar);
 
 };
 

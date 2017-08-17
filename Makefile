@@ -7,7 +7,7 @@ LIBRARY=-lpython2.7 -l sqlite3
 all: main
 
 main: SiteData.o
-	${CXX} ${INCLUDES} -o main main.cpp ${LIBRARY}
+	${CXX} ${CXXFLAGS} ${INCLUDES} -o main main.cpp SiteData.cpp ${LIBRARY}
 
 SiteData.o: SiteData.h
 

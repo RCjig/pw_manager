@@ -8,6 +8,9 @@ using namespace std;
 
 int main(int argc, char **argv) {
 
+  SiteData tester("test", "ing");
+  cout << tester.encodePassword("abc") << endl;
+
 	Py_Initialize();
 
   // create database if not exists
