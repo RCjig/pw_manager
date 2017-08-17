@@ -9,7 +9,7 @@ using namespace std;
 int main(int argc, char **argv) {
 
   SiteData tester("test", "ing");
-  cout << tester.encodePassword("abc") << endl;
+  cout << tester.encodePassword("zxyabc") << endl;
 
 	Py_Initialize();
 

@@ -6,10 +6,10 @@ LIBRARY=-lpython2.7 -l sqlite3
 
 all: main
 
-main: SiteData.o
+main: SiteData.o main.cpp
 	${CXX} ${CXXFLAGS} ${INCLUDES} -o main main.cpp SiteData.cpp ${LIBRARY}
 
-SiteData.o: SiteData.h
+SiteData.o: SiteData.h SiteData.cpp
 
 clean:
 	rm -f main *.o *.db
