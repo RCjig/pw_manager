@@ -2,10 +2,10 @@
 
 using namespace std;
 
-string SiteData::getPassword(string encryptPW, char key) {
+string SiteData::getPassword(char key) {
   string password = "";
-  for (unsigned int i = 0; i < encryptPW.size(); i++) {
-    password += encryptPW[i] ^ (int(key) + i) % 255;
+  for (unsigned int i = 0; i < encPass.size(); i++) {
+    password += encPass[i] ^ (int(key) + i) % 255;
   }
   return password;
 }

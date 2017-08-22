@@ -8,14 +8,7 @@ using namespace std;
 
 int main(int argc, char **argv) {
 
-  SiteData tester("test", "ing");
-  string orig = "abcxyz";
-  cout << "Original = " << orig << endl;
-  string test = tester.encodePassword(orig, 'x');
-  cout << "Encrypted = " << test << endl;
-  string test2 = tester.getPassword(test, 'x');
-  cout << "Unencrypted = " << test2 << endl;
-  
+ // SiteData tester("test", "ing");
 
 	Py_Initialize();
 

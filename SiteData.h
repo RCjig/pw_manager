@@ -8,19 +8,20 @@ using namespace std;
 class SiteData {
 
   private:
-    int password1;
+    string encPass;
 
+    string encodePassword(string password, char key);
 
   public:
     string site;
     string user;
 
-    SiteData(string site, string user, int password1 = -1) : site(site), 
-      user(user) {};
+    SiteData(string site, string user, string unencPass, char key) : site(site), 
+      user(user) {
+      encPass = encodePassword(unencPass, key);
+    }
 
-    string getPassword(string encryptPW, char key);
-
-    string encodePassword(string password, char key);
+    string getPassword(char key);
 
 };
 
