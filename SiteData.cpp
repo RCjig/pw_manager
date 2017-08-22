@@ -2,28 +2,18 @@
 
 using namespace std;
 
-string SiteData::getPassword() {
-  string txtPassword;
-  
-  return txtPassword;
+string SiteData::getPassword(string encryptPW, char key) {
+  string password = "";
+  for (unsigned int i = 0; i < encryptPW.size(); i++) {
+    password += encryptPW[i] ^ (int(key) + i) % 255;
+  }
+  return password;
 }
 
-string SiteData::encodePassword(string txtPassword) {
-  string returnVal = "";
-  for (unsigned int i = 0; i < txtPassword.length(); i++) {
-    returnVal += encodeChar((int)txtPassword.at(i));
+string SiteData::encodePassword(string password, char key) {
+  string encryptPW = "";
+  for (unsigned int i = 0; i < password.size(); i++) {
+    encryptPW += password[i] ^ (int(key) + i) % 255;
   }
-  return returnVal;
-}
-
-string SiteData::encodeChar(int currChar) {
-  string retVal = to_string(currChar);
-
-  if (currChar < 10) {
-    retVal = "00" + retVal;
-  } else if (currChar < 100) {
-    retVal = "0" + retVal;
-  }
-
-  return retVal;
+  return encryptPW;
 }
