@@ -2,6 +2,8 @@
 #define SITEDATA_H
 
 #include <string>
+#include <cstring>
+#include <sqlite3.h>
 
 using namespace std;
 
@@ -22,6 +24,8 @@ class SiteData {
     }
 
     string getPassword(char key);
+
+    void insertPass(sqlite3 * db);
 
 };
 
