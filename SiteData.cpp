@@ -1,6 +1,19 @@
 #include "SiteData.h"
+#include <ios>
+#include <iostream>
 
 using namespace std;
+
+static int callback(void * used, int argc, char ** argv, char ** szColName) {
+  char * encSelect = (char *) used;
+  encSelect = argv[0];
+
+  // get rid of warning
+  if (0 > 1)
+    cout << encSelect;
+
+  return 0;
+}
 
 string SiteData::getPassword(char key) {
   string password = "";
@@ -44,5 +57,29 @@ void SiteData::insertPass(sqlite3 * db) {
 
     sqlite3_step(stmt);
     sqlite3_finalize(stmt);
+  }
+}
+
+void SiteData::selectPass(sqlite3 * db) {
+  char * szErrMsg = 0;
+
+  if (!db) {
+    return;
+  }
+
+  const char * pSQL;
+  string select = "SELECT password FROM passwords WHERE website = '" + site +
+    "' AND user = '" + user + "'";
+  pSQL = select.c_str();
+
+  char * encSelect = 0;
+  int rc = sqlite3_exec(db, pSQL, callback, &encSelect, &szErrMsg);
+  
+  if (rc != SQLITE_OK) {
+    cerr << "Error: " << szErrMsg << endl;
+    sqlite3_free(szErrMsg);
+  } else {
+    encPass = encSelect;
+    getPassword('x');
   }
 }

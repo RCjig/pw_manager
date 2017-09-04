@@ -13,6 +13,10 @@ class SiteData {
     string encPass;
 
     string encodePassword(string password, char key);
+    
+    void selectPass(sqlite3 * db);
+
+    //int callback(void * NotUsed, int argc, char ** argv, char ** szColName);
 
   public:
     string site;
@@ -21,6 +25,10 @@ class SiteData {
     SiteData(string site, string user, string unencPass, char key) : site(site), 
       user(user) {
       encPass = encodePassword(unencPass, key);
+    }
+
+    SiteData(string site, string user, sqlite3 * db) : site(site), user(user) {
+      selectPass(db);
     }
 
     string getPassword(char key);
