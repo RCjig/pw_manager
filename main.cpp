@@ -8,7 +8,7 @@ using namespace std;
 
 int main(int argc, char **argv) {
 
-  SiteData tester("Website2", "User2", "Password2", 'x');
+  // SiteData tester("Website2", "User2", "Password2", 'x');
 
 	Py_Initialize();
 
@@ -31,7 +31,10 @@ int main(int argc, char **argv) {
 
   else {
     cout << "Opened database" << endl;
-    tester.insertPass(db);
+    //tester.insertPass(db);
+    SiteData test1("Website2", "User2", db);
+    cout << "hello_main" << endl;
+    cout << test1.getPassword('x') << endl;
     sqlite3_close(db);
   }
 

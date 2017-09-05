@@ -7,6 +7,10 @@
 
 using namespace std;
 
+struct select_wrapper {
+  string password;
+};
+
 class SiteData {
 
   private:
@@ -15,8 +19,6 @@ class SiteData {
     string encodePassword(string password, char key);
     
     void selectPass(sqlite3 * db);
-
-    //int callback(void * NotUsed, int argc, char ** argv, char ** szColName);
 
   public:
     string site;

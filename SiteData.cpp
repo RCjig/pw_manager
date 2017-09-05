@@ -5,8 +5,8 @@
 using namespace std;
 
 static int callback(void * used, int argc, char ** argv, char ** szColName) {
-  char * encSelect = (char *) used;
-  encSelect = argv[0];
+  select_wrapper * encSelect = (select_wrapper *) used;
+  encSelect->password = string(argv[0]);
 
   // get rid of warning
   if (0 > 1)
@@ -72,14 +72,15 @@ void SiteData::selectPass(sqlite3 * db) {
     "' AND user = '" + user + "'";
   pSQL = select.c_str();
 
-  char * encSelect = 0;
-  int rc = sqlite3_exec(db, pSQL, callback, &encSelect, &szErrMsg);
+  select_wrapper result;
+  int rc = sqlite3_exec(db, pSQL, callback, &result, &szErrMsg);
   
   if (rc != SQLITE_OK) {
     cerr << "Error: " << szErrMsg << endl;
     sqlite3_free(szErrMsg);
   } else {
-    encPass = encSelect;
-    getPassword('x');
+    cout << result.password << endl;
+    encPass = result.password;
+    //getPassword('x');
   }
 }
