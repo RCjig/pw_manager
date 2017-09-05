@@ -1,0 +1,10 @@
+﻿  stdafx.cpp
+c:\users\rcaji\source\repos\pw_manager\pw_manager\stdafx.h(12): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  AssemblyInfo.cpp
+  PW_Manager.cpp
+  main_form.cpp
+  second_form.cpp
+  Generating Code...
+stdafx.obj : warning LNK4248: unresolved typeref token (01000016) for 'sqlite3'; image may not run
+PW_Manager.obj : warning LNK4248: unresolved typeref token (01000016) for 'sqlite3'; image may not run
+  PW_Manager.vcxproj -> C:\Users\rcaji\source\repos\PW_Manager\Debug\PW_Manager.exe
