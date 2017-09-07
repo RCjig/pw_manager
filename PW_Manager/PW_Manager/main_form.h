@@ -35,6 +35,11 @@ namespace PW_Manager {
 			}
 		}
 	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::Button^  button2;
+	protected:
+
+	protected:
+
 	protected:
 
 	private:
@@ -51,23 +56,35 @@ namespace PW_Manager {
 		void InitializeComponent(void)
 		{
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(109, 95);
+			this->button1->Location = System::Drawing::Point(53, 92);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"button1";
+			this->button1->Text = L"Insert";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &main_form::button1_Click);
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(147, 92);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->TabIndex = 1;
+			this->button2->Text = L"Retrieve";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &main_form::button2_Click);
 			// 
 			// main_form
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(284, 261);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Name = L"main_form";
 			this->Text = L"main_form";
@@ -75,16 +92,7 @@ namespace PW_Manager {
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-		sqlite3 * db;
-		int error = sqlite3_open("pw.db", &db);
-		if (!error) {
-			this->Hide();
-			PW_Manager::second_form object_name_second;
-			object_name_second.ShowDialog();
-			this->Show();
-			sqlite3_close(db);
-		}
-	}
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e);
+	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e);
 	};
 }

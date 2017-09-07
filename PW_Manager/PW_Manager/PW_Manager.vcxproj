@@ -152,7 +152,11 @@
     <ClInclude Include="second_form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="SiteData.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="third_form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />
@@ -162,12 +166,14 @@
     <ClCompile Include="main_form.cpp" />
     <ClCompile Include="PW_Manager.cpp" />
     <ClCompile Include="second_form.cpp" />
+    <ClCompile Include="SiteData.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="third_form.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="second_form.resx">
       <DependentUpon>second_form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="third_form.resx">
+      <DependentUpon>third_form.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
