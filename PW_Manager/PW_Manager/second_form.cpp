@@ -7,11 +7,12 @@ System::Void PW_Manager::second_form::button1_Click(System::Object^  sender, Sys
 	int error = sqlite3_open("pw.db", &db);
 	if (!error && label2->Text != "Yes") {
 		
-		msclr::interop::marshal_context contextSite;
-		string site = contextSite.marshal_as<string>(textBox1->Text);
-
+		// convert from string ^ to string for use with SiteData class
 		msclr::interop::marshal_context contextUser;
-		string user = contextUser.marshal_as<string>(textBox2->Text);
+		string user = contextUser.marshal_as<string>(textBox1->Text);
+
+		msclr::interop::marshal_context contextSite;
+		string site = contextSite.marshal_as<string>(textBox2->Text);
 
 		msclr::interop::marshal_context contextPass;
 		string pass = contextPass.marshal_as<string>(textBox3->Text);

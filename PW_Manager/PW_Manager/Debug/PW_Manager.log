@@ -1,6 +1,7 @@
 ﻿  second_form.cpp
+third_form.obj : warning LNK4248: unresolved typeref token (01000026) for 'sqlite3'; image may not run
 SiteData.obj : warning LNK4248: unresolved typeref token (01000020) for 'sqlite3'; image may not run
 second_form.obj : warning LNK4248: unresolved typeref token (01000026) for 'sqlite3'; image may not run
-main_form.obj : warning LNK4248: unresolved typeref token (0100001E) for 'sqlite3'; image may not run
+main_form.obj : warning LNK4248: unresolved typeref token (0100001F) for 'sqlite3'; image may not run
 SiteData.obj : warning LNK4248: unresolved typeref token (01000027) for 'sqlite3_stmt'; image may not run
   PW_Manager.vcxproj -> C:\Users\rcaji\source\repos\PW_Manager\Debug\PW_Manager.exe
